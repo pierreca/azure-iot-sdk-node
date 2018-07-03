@@ -9,7 +9,8 @@
   "dependencies": {
     "azure-iot-common": "1.7.0",
     "debug": "^3.0.1",
-    "machina": "^2.0.1"
+    "machina": "^2.0.1",
+    "snyk": "^1.88.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -30,7 +31,9 @@
     "alltest": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter spec test/_*_test*.js",
     "ci": "npm -s run lint && npm -s run build && npm -s run alltest-min && npm -s run check-cover",
     "test": "npm -s run lint && npm -s run build && npm -s run unittest",
-    "check-cover": "istanbul check-coverage --statements 84 --branches 63 --functions 73 --lines 85"
+    "check-cover": "istanbul check-coverage --statements 84 --branches 63 --functions 73 --lines 85",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 0.10"
@@ -42,5 +45,6 @@
   "bugs": {
     "url": "https://github.com/Azure/azure-iot-sdk-node/issues"
   },
-  "homepage": "https://github.com/Azure/azure-iot-sdk-node#readme"
+  "homepage": "https://github.com/Azure/azure-iot-sdk-node#readme",
+  "snyk": true
 }
